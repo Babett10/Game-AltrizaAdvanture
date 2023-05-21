@@ -7,7 +7,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 5f; // Kecepatan karakter
     public float jump = 12f; //Tinggi lompat
+    public int maxJump = 1;
     private float moveInput;
+    private int jumpCount = 0;
+    private bool isGrounded;
 
     private enum MovementState { idle, running, jumping, falling }
 
@@ -30,13 +33,21 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetButtonDown("Jump")&& IsGrounded())
+        isGrounded = IsGrounded();
+
+        if (isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
+            jumpCount = 0;
         }
 
-        moveInput = (Input.GetAxisRaw("Horizontal"));
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y); 
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jump);
+            jumpCount++;
+        }
+
+        moveInput = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);  
         
         UpdateAnimationState();
         
