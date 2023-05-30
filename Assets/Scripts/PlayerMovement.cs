@@ -6,13 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float speed = 5f; // Kecepatan karakter
-    public float jump = 12f; //Tinggi lompat
-    public int maxJump = 1;
+    public float jumpForce = 12f; //Tinggi lompat
+    private int maxJumps = 2;
+    private int _jumpleft;
     private float moveInput;
-    private int jumpCount = 0;
     private bool isGrounded;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jumping, falling, doubleJump }
 
     [SerializeField] private LayerMask JumpableGround;
    
@@ -27,23 +27,21 @@ public class PlayerMovement : MonoBehaviour
          coll = GetComponent<BoxCollider2D>();
          sprite = GetComponent<SpriteRenderer>();
          anim = GetComponent<Animator>();
+         _jumpleft = maxJumps;
     }
 
 
     void Update()
     {
-        
-        isGrounded = IsGrounded();
-
-        if (isGrounded)
+        if (IsGrounded() && rb.velocity.y <= 0)
         {
-            jumpCount = 0;
+            _jumpleft = maxJumps;
         }
 
-        if (Input.GetButtonDown("Jump") && jumpCount < maxJump)
+        if (Input.GetButtonDown("Jump") && _jumpleft > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
-            jumpCount++;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            _jumpleft -= 1;
         }
 
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -80,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.falling;
         }
-
         anim.SetInteger("state", (int)state);
     }
 
