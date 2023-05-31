@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             _jumpleft -= 1;
+            Debug.Log("lompat =" +  _jumpleft);
         }
 
         moveInput = Input.GetAxisRaw("Horizontal");
