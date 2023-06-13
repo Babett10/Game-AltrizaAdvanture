@@ -89900,7 +89900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7cb078ce0da624296cd5be55bf097e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   jumpForce: 12
   JumpableGround:
     serializedVersion: 2
