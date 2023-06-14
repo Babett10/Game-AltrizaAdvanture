@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     private bool isGrounded;
 
+    public AudioSource source;
+    public AudioClip jumpClip;
+    public AudioClip startClip;
+    
+
     private enum MovementState { idle, running, jumping, falling, doubleJump }
 
     [SerializeField] private LayerMask JumpableGround;
@@ -28,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
          sprite = GetComponent<SpriteRenderer>();
          anim = GetComponent<Animator>();
          _jumping = maxJumps;
+         startSound();
     }
 
 
@@ -43,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             _jumping -= 1;
             Debug.Log("lompat =" +  _jumping);
+            jumpSound();
         }
 
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -51,6 +58,15 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimationState();
         
     }
+
+    public void jumpSound()
+    {
+        source.PlayOneShot(jumpClip);
+    }
+    public void startSound()
+    {
+        source.PlayOneShot(startClip);
+    }   
 
     private void UpdateAnimationState() //Animasi
     {
@@ -96,5 +112,5 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, JumpableGround);
     }
 
-
 }
+

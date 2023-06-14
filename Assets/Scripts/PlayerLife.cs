@@ -8,6 +8,9 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    public AudioSource source;
+    public AudioClip dieClip;
+
 
     private void Start()
     {
@@ -27,6 +30,8 @@ public class PlayerLife : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death"); // animasi death
+        source.PlayOneShot(dieClip);
+        
     }
 
     private void RestartLevel()

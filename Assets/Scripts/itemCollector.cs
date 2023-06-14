@@ -7,6 +7,11 @@ public class itemCollector : MonoBehaviour
 {
     private int Oranges = 0;
 
+    public AudioSource source;
+    public AudioClip collectClip;
+
+    public PlayerMovement player;
+
     [SerializeField] private Text orangesText;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +22,10 @@ public class itemCollector : MonoBehaviour
             Oranges++;
             orangesText.text = "Oranges: " + Oranges;
             Debug.Log ("jeruk = " + Oranges);
-
+            source.PlayOneShot(collectClip);
         }
     }
+
+
+    
 }
