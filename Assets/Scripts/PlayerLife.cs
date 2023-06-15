@@ -31,12 +31,15 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death"); // animasi death
         source.PlayOneShot(dieClip);
-        
+        StartCoroutine(LoseScreen());
     }
 
-    private void RestartLevel()
+    IEnumerator LoseScreen()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //restart setelah kalah
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("LoseGameScene");   
+=======
+        
     }
 
 }

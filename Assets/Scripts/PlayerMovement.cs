@@ -13,10 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
 
     public AudioSource source;
-    public AudioClip jumpClip;
-    public AudioClip startClip;
+    public AudioClip jumpClip, startClip;
     
-
     private enum MovementState { idle, running, jumping, falling, doubleJump }
 
     [SerializeField] private LayerMask JumpableGround;

@@ -22,10 +22,9 @@ public class itemCollector : MonoBehaviour
             Oranges++;
             orangesText.text = "Oranges: " + Oranges;
             Debug.Log ("jeruk = " + Oranges);
+            PlayerPrefs.SetInt("TotalOranges", Oranges); //menyimpan jeruk yang sudah di collect ke dalam PlayerPrefs
             source.PlayOneShot(collectClip);
         }
     }
-
-
     
 }
