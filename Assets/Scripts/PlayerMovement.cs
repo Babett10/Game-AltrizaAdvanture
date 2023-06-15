@@ -14,9 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource source;
     public AudioClip jumpClip, startClip;
-   
     
-
     private enum MovementState { idle, running, jumping, falling, doubleJump }
 
     [SerializeField] private LayerMask JumpableGround;

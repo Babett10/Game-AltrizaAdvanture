@@ -38,6 +38,8 @@ public class PlayerLife : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("LoseGameScene");   
+=======
+        
     }
 
 }
