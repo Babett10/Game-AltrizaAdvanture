@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoseGame : MonoBehaviour
 {
-    public Text totalOrangesText ;
+    [SerializeField] Text totalOrangesText ;
     private void Start()
     {
         //memanggil total oranges yang disimpan di PlayerPrefs
