@@ -26,7 +26,5 @@ public class itemCollector : MonoBehaviour
             source.PlayOneShot(collectClip);
         }
     }
-
-
     
 }
