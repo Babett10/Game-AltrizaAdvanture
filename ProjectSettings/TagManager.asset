@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Orange
   - Trap
-  - AudioSFX
   layers:
   - Default
   - TransparentFX
@@ -44,9 +43,9 @@ TagManager:
   - name: Background
     uniqueID: 3508062691
     locked: 0
-  - name: Terrain
-    uniqueID: 68684453
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Terrain
+    uniqueID: 68684453
     locked: 0

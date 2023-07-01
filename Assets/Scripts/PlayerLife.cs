@@ -7,6 +7,8 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    public GameObject LosePanel;
+    public GameObject orangeText;
 
     public AudioSource source;
     public AudioClip dieClip;
@@ -32,14 +34,15 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death"); // animasi death
         source.PlayOneShot(dieClip);
         StartCoroutine(LoseScreen());
+        
+        
     }
 
     IEnumerator LoseScreen()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("LoseGameScene");   
-=======
-        
+        LosePanel.SetActive(true);    
+        orangeText.SetActive(false);     
     }
 
 }
