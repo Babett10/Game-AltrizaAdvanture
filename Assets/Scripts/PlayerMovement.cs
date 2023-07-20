@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    
     void Start()
     {
          rb = GetComponent<Rigidbody2D>();
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
          anim = GetComponent<Animator>();
          _jumping = maxJumps;
          startSound();
+
     }
 
 

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private bool isPaused = false;
     public GameObject pausePanel;
     public GameObject orangeText;
+
+
     [SerializeField] Text wintotalOrangesText;
     [SerializeField] Text losetotalOrangesText;
 
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
         int totalOrange = PlayerPrefs.GetInt("TotalOranges", 0); 
         wintotalOrangesText.text = "Total Oranges : " + totalOrange;
         losetotalOrangesText.text = "Total Oranges : " + totalOrange;
+       
     }
 
     private void Update()
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     private void Pause()
@@ -72,4 +76,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+
+
 }
