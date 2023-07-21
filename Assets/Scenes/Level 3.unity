@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ef0ecc4cffe7741b1c67d84bb41a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalOrangesText: {fileID: 0}
+  totalOrangesText: {fileID: 274949477}
 --- !u!114 &292812885
 MonoBehaviour:
   m_ObjectHideFlags: 0

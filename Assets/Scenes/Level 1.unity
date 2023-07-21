@@ -1057,6 +1057,7 @@ GameObject:
   - component: {fileID: 292812883}
   - component: {fileID: 292812886}
   - component: {fileID: 292812885}
+  - component: {fileID: 292812887}
   m_Layer: 5
   m_Name: WinPanel
   m_TagString: Untagged
@@ -1124,6 +1125,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292812882}
   m_CullTransparentMesh: 1
+--- !u!114 &292812887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292812882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef0ecc4cffe7741b1c67d84bb41a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalOrangesText: {fileID: 274949477}
 --- !u!1001 &317790159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2542,7 +2556,7 @@ MonoBehaviour:
   pausePanel: {fileID: 1817333412}
   orangeText: {fileID: 448938754}
   wintotalOrangesText: {fileID: 400023671}
-  losetotalOrangesText: {fileID: 274949477}
+  losetotalOrangesText: {fileID: 400023671}
 --- !u!1001 &645091130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8727,6 +8741,7 @@ GameObject:
   - component: {fileID: 887269976}
   - component: {fileID: 887269979}
   - component: {fileID: 887269978}
+  - component: {fileID: 887269980}
   m_Layer: 5
   m_Name: LosePanel
   m_TagString: Untagged
@@ -8794,6 +8809,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887269975}
   m_CullTransparentMesh: 1
+--- !u!114 &887269980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887269975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ef0ecc4cffe7741b1c67d84bb41a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalOrangesText: {fileID: 400023671}
 --- !u!4 &888058350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6861792336843199497, guid: 426143ac6c8e0814b97b6d8c6471e11d, type: 3}
